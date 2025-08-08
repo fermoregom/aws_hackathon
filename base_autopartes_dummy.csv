@@ -1,0 +1,101 @@
+ID,Nombre de Pieza,Marca de Auto,Modelo,Año,Dimensiones,Fabricante,Precio (MXN),Descripción,Compatibilidad Extra,Estado
+PZ0001,Bomba de agua,Fiat,Aveo,2010,26x17x17 cm,Hella,7071.2,Pieza nueva de alta calidad con certificación internacional.,"Aveo, Logan, Cronos",Nuevo
+PZ0002,Filtro de aceite,Toyota,Tiggo,2018,15x13x14 cm,Continental,3985.63,Compatible con múltiples modelos y marcas.,"Impreza, Altima, Tiggo",Nuevo
+PZ0003,Radiador,Chevrolet,Aveo,2022,29x3x3 cm,ACDelco,266.21,Diseño optimizado para mejor rendimiento.,"208, Cronos",Nuevo
+PZ0004,Sensor de oxígeno,Toyota,208,2014,20x12x16 cm,ACDelco,816.63,Alta durabilidad y eficiencia comprobada.,Focus,Nuevo
+PZ0005,Sensor de oxígeno,Peugeot,CX-5,2008,22x14x24 cm,Valeo,580.71,Alta durabilidad y eficiencia comprobada.,"Elantra, Aveo",Nuevo
+PZ0006,Catalizador,BMW,Jetta,2022,16x17x9 cm,Hella,6275.18,Diseño optimizado para mejor rendimiento.,"208, Logan",Nuevo
+PZ0007,Sensor de oxígeno,Fiat,Aveo,2006,10x7x25 cm,Continental,4814.01,Alta durabilidad y eficiencia comprobada.,"Cronos, Elantra, Forte",Nuevo
+PZ0008,Radiador,Volkswagen,Impreza,2007,16x7x9 cm,Delphi,7270.31,Alta durabilidad y eficiencia comprobada.,Tiggo,Nuevo
+PZ0009,Módulo ABS,Renault,320i,2017,26x3x18 cm,Continental,4187.19,Cumple con normas ISO de seguridad y rendimiento.,"Focus, Jetta, Elantra",Nuevo
+PZ0010,Filtro de aceite,Fiat,Focus,2009,19x3x16 cm,Hella,7201.05,Pieza nueva de alta calidad con certificación internacional.,"320i, Corolla, Coolray",Nuevo
+PZ0011,Sensor de oxígeno,Hyundai,Elantra,2025,20x8x13 cm,Bosch,5935.53,Compatible con múltiples modelos y marcas.,Logan,Nuevo
+PZ0012,Motor de arranque,Hyundai,320i,2019,14x5x12 cm,Bosch,2636.79,Alta durabilidad y eficiencia comprobada.,"Jetta, CX-5, Coolray",Nuevo
+PZ0013,Radiador,Kia,Coolray,2007,25x16x19 cm,Magneti Marelli,7337.48,Alta durabilidad y eficiencia comprobada.,"Impreza, Logan",Nuevo
+PZ0014,Catalizador,Subaru,Forte,2021,22x20x17 cm,NGK,4865.23,Pieza nueva de alta calidad con certificación internacional.,"Forte, Impreza, Cronos",Nuevo
+PZ0015,Amortiguador,Renault,Tiggo,2008,22x18x17 cm,Bosch,2771.71,Compatible con múltiples modelos y marcas.,Aveo,Nuevo
+PZ0016,Batería,Subaru,Focus,2020,9x16x21 cm,Hitachi,5915.85,Pieza nueva de alta calidad con certificación internacional.,Corolla,Nuevo
+PZ0017,Filtro de aceite,Volkswagen,208,2020,18x10x22 cm,Bosch,2731.23,Compatible con múltiples modelos y marcas.,Forte,Nuevo
+PZ0018,Radiador,Fiat,Focus,2020,20x9x8 cm,Continental,2001.99,Diseño optimizado para mejor rendimiento.,208,Nuevo
+PZ0019,Amortiguador,Volkswagen,Jetta,2015,8x9x12 cm,Bosch,1209.34,Alta durabilidad y eficiencia comprobada.,CX-5,Nuevo
+PZ0020,Radiador,Chevrolet,Focus,2017,25x5x25 cm,Magneti Marelli,1665.83,Compatible con múltiples modelos y marcas.,"Corolla, 208",Nuevo
+PZ0021,Bomba de agua,BMW,Focus,2019,11x6x14 cm,Hitachi,282.32,Compatible con múltiples modelos y marcas.,"Forte, Jetta, 208",Nuevo
+PZ0022,Disco de freno,Hyundai,Corolla,2001,9x4x16 cm,Continental,464.91,Compatible con múltiples modelos y marcas.,Altima,Nuevo
+PZ0023,Alternador,Hyundai,320i,2022,23x13x23 cm,NGK,626.26,Compatible con múltiples modelos y marcas.,"Logan, Focus, Tiggo",Nuevo
+PZ0024,Batería,Geely,Elantra,2005,13x20x6 cm,Valeo,7164.0,Diseño optimizado para mejor rendimiento.,320i,Nuevo
+PZ0025,Filtro de aceite,Mazda,CX-5,2002,26x18x11 cm,Delphi,3766.57,Diseño optimizado para mejor rendimiento.,Tiggo,Nuevo
+PZ0026,Disco de freno,Chevrolet,Elantra,2016,20x6x20 cm,Magneti Marelli,5979.55,Pieza nueva de alta calidad con certificación internacional.,"208, Focus, CX-5",Nuevo
+PZ0027,Batería,BMW,208,2005,17x11x13 cm,ACDelco,5670.32,Compatible con múltiples modelos y marcas.,"Cronos, CX-5, Tiggo",Nuevo
+PZ0028,Motor de arranque,Geely,Jetta,2010,19x3x25 cm,Valeo,7255.62,Pieza nueva de alta calidad con certificación internacional.,"Altima, Coolray, Impreza",Nuevo
+PZ0029,Disco de freno,Subaru,CX-5,2004,18x19x11 cm,Valeo,2645.96,Diseño optimizado para mejor rendimiento.,"Altima, Logan, Jetta",Nuevo
+PZ0030,Amortiguador,Renault,Focus,2011,18x4x11 cm,Hella,6882.56,Pieza nueva de alta calidad con certificación internacional.,Jetta,Nuevo
+PZ0031,Catalizador,Ford,Focus,2022,24x11x21 cm,Hitachi,6224.63,Alta durabilidad y eficiencia comprobada.,"208, Aveo, Tiggo",Nuevo
+PZ0032,Batería,Nissan,Jetta,2017,10x9x24 cm,Delphi,4815.73,Cumple con normas ISO de seguridad y rendimiento.,"208, Tiggo",Nuevo
+PZ0033,Amortiguador,Mazda,CX-5,2013,28x17x15 cm,NGK,1050.68,Compatible con múltiples modelos y marcas.,Altima,Nuevo
+PZ0034,Radiador,BMW,Tiggo,2004,18x12x20 cm,NGK,3619.81,Cumple con normas ISO de seguridad y rendimiento.,"Coolray, Logan",Nuevo
+PZ0035,Alternador,Mazda,Altima,2002,7x9x18 cm,Delphi,1820.66,Cumple con normas ISO de seguridad y rendimiento.,Corolla,Nuevo
+PZ0036,Disco de freno,Mazda,Elantra,2002,5x5x11 cm,NGK,3339.85,Pieza nueva de alta calidad con certificación internacional.,"Logan, Impreza, Focus",Nuevo
+PZ0037,Filtro de aceite,Chevrolet,Jetta,2016,17x13x10 cm,Valeo,4246.91,Cumple con normas ISO de seguridad y rendimiento.,"Corolla, Impreza",Nuevo
+PZ0038,Sensor de oxígeno,Kia,Coolray,2002,20x17x4 cm,Bosch,1330.92,Alta durabilidad y eficiencia comprobada.,Cronos,Nuevo
+PZ0039,Filtro de aceite,Volkswagen,Aveo,2021,17x6x7 cm,Denso,3294.6,Pieza nueva de alta calidad con certificación internacional.,"Focus, Altima",Nuevo
+PZ0040,Radiador,Subaru,Jetta,2014,27x7x18 cm,Denso,7132.32,Alta durabilidad y eficiencia comprobada.,Elantra,Nuevo
+PZ0041,Amortiguador,Kia,Focus,2021,24x10x13 cm,Magneti Marelli,6982.88,Pieza nueva de alta calidad con certificación internacional.,"Coolray, Jetta",Nuevo
+PZ0042,Bomba de agua,Toyota,Forte,2025,11x12x16 cm,Valeo,5825.09,Pieza nueva de alta calidad con certificación internacional.,Coolray,Nuevo
+PZ0043,Bomba de agua,Renault,Forte,2008,26x18x16 cm,Continental,2415.08,Diseño optimizado para mejor rendimiento.,"208, Aveo",Nuevo
+PZ0044,Disco de freno,Kia,Focus,2024,27x12x19 cm,Denso,3446.25,Alta durabilidad y eficiencia comprobada.,Elantra,Nuevo
+PZ0045,Amortiguador,Peugeot,208,2020,6x11x23 cm,Continental,828.95,Pieza nueva de alta calidad con certificación internacional.,Impreza,Nuevo
+PZ0046,Bomba de agua,Ford,Aveo,2019,5x6x17 cm,Valeo,6506.98,Compatible con múltiples modelos y marcas.,"Cronos, Coolray, Altima",Nuevo
+PZ0047,Módulo ABS,Toyota,Forte,2005,11x8x4 cm,NGK,7129.07,Compatible con múltiples modelos y marcas.,"Tiggo, Jetta",Nuevo
+PZ0048,Filtro de aceite,Chevrolet,Impreza,2007,17x3x13 cm,Denso,5995.16,Cumple con normas ISO de seguridad y rendimiento.,"Focus, Elantra, Jetta",Nuevo
+PZ0049,Filtro de aceite,Geely,Altima,2014,6x9x14 cm,Magneti Marelli,410.68,Alta durabilidad y eficiencia comprobada.,"Impreza, Focus",Nuevo
+PZ0050,Catalizador,Geely,Logan,2005,14x19x25 cm,Denso,3658.23,Pieza nueva de alta calidad con certificación internacional.,"Focus, CX-5, Tiggo",Nuevo
+PZ0051,Filtro de aceite,Peugeot,Tiggo,2019,28x9x19 cm,Hella,992.24,Pieza nueva de alta calidad con certificación internacional.,Elantra,Nuevo
+PZ0052,Disco de freno,Renault,Tiggo,2008,9x15x3 cm,Magneti Marelli,3864.12,Compatible con múltiples modelos y marcas.,"Focus, Impreza",Nuevo
+PZ0053,Módulo ABS,Ford,Cronos,2012,28x12x18 cm,Valeo,1708.68,Cumple con normas ISO de seguridad y rendimiento.,"Forte, Impreza, Coolray",Nuevo
+PZ0054,Bomba de agua,Subaru,Impreza,2014,16x6x8 cm,NGK,5395.12,Diseño optimizado para mejor rendimiento.,"Altima, Focus",Nuevo
+PZ0055,Filtro de aceite,Hyundai,Corolla,2001,21x12x3 cm,Continental,4063.88,Cumple con normas ISO de seguridad y rendimiento.,"Aveo, Altima, Tiggo",Nuevo
+PZ0056,Catalizador,Peugeot,CX-5,2019,15x17x13 cm,Denso,7114.72,Pieza nueva de alta calidad con certificación internacional.,"Impreza, Elantra, Aveo",Nuevo
+PZ0057,Bobina de encendido,Nissan,Focus,2023,30x16x19 cm,Magneti Marelli,3009.12,Cumple con normas ISO de seguridad y rendimiento.,"Focus, 320i",Nuevo
+PZ0058,Amortiguador,Hyundai,Focus,2011,15x9x11 cm,Delphi,7326.65,Diseño optimizado para mejor rendimiento.,"Logan, Coolray, Impreza",Nuevo
+PZ0059,Batería,Ford,320i,2021,12x19x17 cm,Valeo,6845.82,Alta durabilidad y eficiencia comprobada.,"Jetta, Altima",Nuevo
+PZ0060,Motor de arranque,Kia,Jetta,2001,17x3x8 cm,NGK,2662.22,Diseño optimizado para mejor rendimiento.,CX-5,Nuevo
+PZ0061,Radiador,Volkswagen,Coolray,2008,24x7x18 cm,Delphi,6872.94,Cumple con normas ISO de seguridad y rendimiento.,"Altima, Focus, Logan",Nuevo
+PZ0062,Radiador,Renault,Impreza,2019,15x18x22 cm,Hitachi,5134.55,Cumple con normas ISO de seguridad y rendimiento.,"Tiggo, Coolray",Nuevo
+PZ0063,Alternador,Mazda,Jetta,2024,26x7x8 cm,Hitachi,6509.37,Alta durabilidad y eficiencia comprobada.,"320i, Aveo, Elantra",Nuevo
+PZ0064,Filtro de aceite,Renault,Aveo,2023,24x11x7 cm,ACDelco,7040.85,Compatible con múltiples modelos y marcas.,"Coolray, Cronos, 320i",Nuevo
+PZ0065,Batería,Kia,Aveo,2022,20x15x6 cm,ACDelco,5925.3,Alta durabilidad y eficiencia comprobada.,Focus,Nuevo
+PZ0066,Disco de freno,Toyota,Altima,2022,7x10x4 cm,Delphi,6759.49,Diseño optimizado para mejor rendimiento.,Forte,Nuevo
+PZ0067,Módulo ABS,Peugeot,Cronos,2019,12x13x22 cm,Valeo,4114.77,Diseño optimizado para mejor rendimiento.,320i,Nuevo
+PZ0068,Disco de freno,Nissan,Cronos,2024,15x4x5 cm,Magneti Marelli,6617.35,Compatible con múltiples modelos y marcas.,"Aveo, Jetta, 208",Nuevo
+PZ0069,Módulo ABS,Toyota,208,2011,21x3x6 cm,Continental,4760.14,Cumple con normas ISO de seguridad y rendimiento.,"Forte, Corolla",Nuevo
+PZ0070,Módulo ABS,BMW,CX-5,2006,14x18x23 cm,Denso,973.98,Compatible con múltiples modelos y marcas.,Elantra,Nuevo
+PZ0071,Bomba de agua,Toyota,Focus,2023,23x17x24 cm,ACDelco,3094.33,Alta durabilidad y eficiencia comprobada.,"Tiggo, Cronos",Nuevo
+PZ0072,Amortiguador,Kia,Altima,2009,15x5x8 cm,Continental,5970.65,Pieza nueva de alta calidad con certificación internacional.,"Impreza, Forte, Tiggo",Nuevo
+PZ0073,Catalizador,Mazda,Logan,2007,26x5x8 cm,Magneti Marelli,2902.84,Pieza nueva de alta calidad con certificación internacional.,"Forte, Corolla, CX-5",Nuevo
+PZ0074,Amortiguador,Chevrolet,Aveo,2000,17x10x3 cm,NGK,1931.09,Diseño optimizado para mejor rendimiento.,"Cronos, Tiggo",Nuevo
+PZ0075,Radiador,Nissan,320i,2010,17x18x22 cm,Hella,4060.15,Alta durabilidad y eficiencia comprobada.,Logan,Nuevo
+PZ0076,Motor de arranque,Peugeot,Altima,2024,14x17x8 cm,Hella,3465.38,Diseño optimizado para mejor rendimiento.,"Elantra, 320i, Logan",Nuevo
+PZ0077,Radiador,Hyundai,Tiggo,2022,12x3x10 cm,ACDelco,6481.6,Alta durabilidad y eficiencia comprobada.,"Aveo, Impreza",Nuevo
+PZ0078,Amortiguador,Chevrolet,Logan,2003,12x11x17 cm,Hitachi,3379.81,Diseño optimizado para mejor rendimiento.,"Forte, CX-5",Nuevo
+PZ0079,Catalizador,Subaru,Altima,2014,26x3x17 cm,Valeo,956.92,Cumple con normas ISO de seguridad y rendimiento.,"Altima, Logan",Nuevo
+PZ0080,Sensor de oxígeno,BMW,Tiggo,2015,21x5x7 cm,Bosch,6971.21,Pieza nueva de alta calidad con certificación internacional.,"Corolla, CX-5",Nuevo
+PZ0081,Amortiguador,Toyota,Tiggo,2005,8x20x8 cm,Delphi,3409.25,Compatible con múltiples modelos y marcas.,"Jetta, Forte, Coolray",Nuevo
+PZ0082,Disco de freno,Kia,Aveo,2004,30x10x20 cm,Magneti Marelli,937.59,Cumple con normas ISO de seguridad y rendimiento.,Focus,Nuevo
+PZ0083,Disco de freno,Geely,Jetta,2015,23x8x14 cm,Delphi,7030.84,Pieza nueva de alta calidad con certificación internacional.,"Cronos, CX-5",Nuevo
+PZ0084,Módulo ABS,Peugeot,CX-5,2004,18x11x12 cm,Delphi,7446.83,Diseño optimizado para mejor rendimiento.,"Forte, Jetta",Nuevo
+PZ0085,Amortiguador,Nissan,Cronos,2000,9x3x24 cm,ACDelco,2383.7,Diseño optimizado para mejor rendimiento.,"208, Aveo",Nuevo
+PZ0086,Catalizador,Hyundai,Tiggo,2018,30x4x20 cm,Hitachi,1206.5,Cumple con normas ISO de seguridad y rendimiento.,"Forte, Corolla, Aveo",Nuevo
+PZ0087,Motor de arranque,Chevrolet,Impreza,2021,14x4x22 cm,Hitachi,7304.76,Diseño optimizado para mejor rendimiento.,"Corolla, Cronos, Forte",Nuevo
+PZ0088,Disco de freno,Geely,Tiggo,2025,14x13x22 cm,Delphi,1476.3,Diseño optimizado para mejor rendimiento.,"320i, Forte, Coolray",Nuevo
+PZ0089,Disco de freno,Chevrolet,320i,2022,10x6x25 cm,Bosch,2723.26,Cumple con normas ISO de seguridad y rendimiento.,"Corolla, Jetta, Aveo",Nuevo
+PZ0090,Bobina de encendido,Chery,Focus,2010,13x20x19 cm,Denso,5469.11,Pieza nueva de alta calidad con certificación internacional.,Tiggo,Nuevo
+PZ0091,Filtro de aceite,Nissan,Elantra,2003,22x14x21 cm,Valeo,2005.83,Compatible con múltiples modelos y marcas.,"Corolla, Logan, Focus",Nuevo
+PZ0092,Catalizador,Renault,Tiggo,2009,23x15x20 cm,Magneti Marelli,4525.04,Alta durabilidad y eficiencia comprobada.,Aveo,Nuevo
+PZ0093,Disco de freno,Peugeot,Altima,2023,6x8x19 cm,NGK,4176.06,Pieza nueva de alta calidad con certificación internacional.,Cronos,Nuevo
+PZ0094,Alternador,Geely,Jetta,2001,11x11x23 cm,Continental,6397.37,Alta durabilidad y eficiencia comprobada.,"Logan, Elantra",Nuevo
+PZ0095,Sensor de oxígeno,Chery,Tiggo,2013,10x4x6 cm,NGK,3376.9,Alta durabilidad y eficiencia comprobada.,Jetta,Nuevo
+PZ0096,Batería,Renault,Aveo,2019,22x18x6 cm,Bosch,4573.2,Pieza nueva de alta calidad con certificación internacional.,"Aveo, Cronos, Coolray",Nuevo
+PZ0097,Disco de freno,Peugeot,CX-5,2010,12x7x11 cm,Valeo,6736.41,Diseño optimizado para mejor rendimiento.,"Tiggo, Jetta",Nuevo
+PZ0098,Catalizador,Toyota,Elantra,2012,23x3x6 cm,Continental,7437.37,Diseño optimizado para mejor rendimiento.,208,Nuevo
+PZ0099,Sensor de oxígeno,Chevrolet,Coolray,2008,10x13x22 cm,Bosch,4499.13,Cumple con normas ISO de seguridad y rendimiento.,"Cronos, Corolla, CX-5",Nuevo
+PZ0100,Amortiguador,Chery,Logan,2022,11x11x24 cm,Valeo,7338.26,Alta durabilidad y eficiencia comprobada.,Logan,Nuevo
