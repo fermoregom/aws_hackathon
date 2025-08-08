@@ -9,6 +9,7 @@ from prompt_awss_hack import prompt_pieza
 from typing import List, Dict, Any, Optional
 from langchain_aws import ChatBedrockConverse
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 
 load_dotenv()
 
@@ -48,44 +49,49 @@ class ConversationMemory:
         """Limpia la memoria de conversación"""
         self.messages = []
 
-class S3CSVSearcher:
-    """Maneja la búsqueda en archivos CSV almacenados en S3"""
+class LocalCSVSearcher:
+    """Maneja la búsqueda en archivos CSV almacenados localmente en la carpeta assets"""
     
-    def __init__(self, bucket_name: str, aws_region: str = 'us-east-1'):
-        self.bucket_name = bucket_name
-        self.s3_client = boto3.client('s3', region_name=aws_region)
+    def __init__(self, assets_path: str = 'assets'):
+        self.assets_path = assets_path
         self.cached_dataframes = {}
     
-    def load_csv_from_s3(self, file_key: str) -> pd.DataFrame:
-        """Carga un archivo CSV desde S3"""
+    def load_csv_from_local(self, file_name: str) -> pd.DataFrame:
+        """Carga un archivo CSV desde la carpeta local assets"""
         try:
-            # Verificar si ya está en caché
-            if file_key in self.cached_dataframes:
-                logger.info(f"Usando CSV en caché: {file_key}")
-                return self.cached_dataframes[file_key]
+            # Crear la ruta completa al archivo
+            file_path = os.path.join(self.assets_path, file_name)
             
-            logger.info(f"Descargando CSV desde S3: {file_key}")
-            response = self.s3_client.get_object(Bucket=self.bucket_name, Key=file_key)
+            # Verificar si ya está en caché
+            if file_name in self.cached_dataframes:
+                logger.info(f"Usando CSV en caché: {file_name}")
+                return self.cached_dataframes[file_name]
+            
+            logger.info(f"Cargando CSV desde: {file_path}")
+            
+            # Verificar si el archivo existe
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"El archivo {file_path} no se encuentra en la carpeta {self.assets_path}")
             
             # Leer el CSV
-            df = pd.read_csv(response['Body'])
+            df = pd.read_csv(file_path)
             
             # Guardar en caché
-            self.cached_dataframes[file_key] = df
+            self.cached_dataframes[file_name] = df
             
             logger.info(f"CSV cargado exitosamente. Filas: {len(df)}, Columnas: {len(df.columns)}")
             return df
             
         except Exception as e:
-            logger.error(f"Error al cargar CSV desde S3: {str(e)}")
+            logger.error(f"Error al cargar CSV desde local: {str(e)}")
             raise
     
-    def search_piece(self, file_key: str, piece_identifier: str, search_columns: List[str] = None) -> Dict[str, Any]:
+    def search_piece(self, file_name: str, piece_identifier: str, search_columns: List[str] = None) -> Dict[str, Any]:
         """
         Busca una pieza específica en el CSV
         
         Args:
-            file_key: Nombre del archivo en S3
+            file_name: Nombre del archivo en la carpeta assets
             piece_identifier: Identificador de la pieza a buscar
             search_columns: Columnas donde buscar (si es None, busca en todas)
         
@@ -93,7 +99,7 @@ class S3CSVSearcher:
             Diccionario con los resultados de la búsqueda
         """
         try:
-            df = self.load_csv_from_s3(file_key)
+            df = self.load_csv_from_local(file_name)
             
             if search_columns is None:
                 search_columns = df.columns.tolist()
@@ -156,27 +162,27 @@ class S3CSVSearcher:
 class NovaProChatbot:
     """Chatbot principal usando AWS Nova Pro con memoria y búsqueda CSV"""
     
-    def __init__(self, bucket_name: str, csv_file_key: str, aws_region: str = 'us-east-1'):
+    def __init__(self, csv_file_name: str, aws_region: str = 'us-east-1', assets_path: str = '../'):
         self.bedrock_client = ChatBedrockConverse(
-        client=boto3.client(
-            service_name='bedrock-runtime',
-            region_name=aws_region,
-            aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
-            aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
-            config=boto3.session.Config(
-            read_timeout=300,  # 5 minutos
-            connect_timeout=60,  # 1 minuto
-            retries={'max_attempts': 2})
-        ),
-        model="amazon.nova-pro-v1:0",
-        max_tokens=7000,
-        temperature=0.15,
-        top_p=0.9,
-        region_name=aws_region
-    )
+            client=boto3.client(
+                service_name='bedrock-runtime',
+                region_name=aws_region,
+                aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+                aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+                config=boto3.session.Config(
+                    read_timeout=300,  # 5 minutos
+                    connect_timeout=60,  # 1 minuto
+                    retries={'max_attempts': 2})
+            ),
+            model="amazon.nova-pro-v1:0",
+            max_tokens=7000,
+            temperature=0.15,
+            top_p=0.9,
+            region_name=aws_region
+        )
         self.memory = ConversationMemory()
-        self.csv_searcher = S3CSVSearcher(bucket_name, aws_region)
-        self.csv_file_key = csv_file_key
+        self.csv_searcher = LocalCSVSearcher(assets_path)
+        self.csv_file_name = "base_autopartes_dummy.csv"
         self.model_id = "amazon.nova-pro-v1:0"
     
     def format_search_results(self, search_results: Dict[str, Any]) -> str:
@@ -209,7 +215,7 @@ class NovaProChatbot:
             Cuando el usuario mencione una pieza específica, búscala automáticamente y proporciona información relevante.
             Sé conciso pero informativo en tus respuestas."""
             prompt_pieza
-            full_prompt = prompt_pieza.format_map({"user_message":user_message})
+            full_prompt = prompt_pieza.format_map({"user_message": user_message})
 
             # Preparar el cuerpo de la solicitud
             request_body = {
@@ -231,11 +237,13 @@ class NovaProChatbot:
             }
             
             # Llamar al modelo
-            response = self.bedrock_client.converse(
-                modelId=self.model_id,
-                messages=request_body["messages"],
-                inferenceConfig=request_body["inferenceConfig"]
-            )
+            response = self.bedrock_client.invoke([HumanMessage(content=full_prompt)])
+            
+            # self.bedrock_client.converse(
+            #     modelId=self.model_id,
+            #     messages=request_body["messages"],
+            #     inferenceConfig=request_body["inferenceConfig"]
+            # )
             
             # Extraer la respuesta
             assistant_response = response['output']['message']['content'][0]['text']
@@ -286,7 +294,7 @@ class NovaProChatbot:
             
             if piece_id:
                 logger.info(f"Detectada consulta de pieza: {piece_id}")
-                search_results = self.csv_searcher.search_piece(self.csv_file_key, piece_id)
+                search_results = self.csv_searcher.search_piece(self.csv_file_name, piece_id)
                 search_context = f"\nInformación de la base de datos:\n{self.format_search_results(search_results)}"
             
             # Generar respuesta usando Nova Pro
@@ -318,11 +326,11 @@ def main():
     """Ejemplo de uso del sistema"""
     
     # Configuración
-    BUCKET_NAME = "tu-bucket-name"
-    CSV_FILE_KEY = "path/to/your/pieces.csv"
+    CSV_FILE_NAME = "pieces.csv"  # Nombre del archivo en la carpeta assets
+    ASSETS_PATH = "assets"  # Ruta a la carpeta assets
     
     # Crear instancia del chatbot
-    chatbot = NovaProChatbot(BUCKET_NAME, CSV_FILE_KEY)
+    chatbot = NovaProChatbot(CSV_FILE_NAME, assets_path=ASSETS_PATH)
     
     # Ejemplo de conversación
     messages = [
