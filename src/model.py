@@ -9,6 +9,7 @@ from prompt_awss_hack import prompt_pieza
 from typing import List, Dict, Any, Optional
 from langchain_aws import ChatBedrockConverse
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 
 load_dotenv()
 
@@ -161,7 +162,7 @@ class LocalCSVSearcher:
 class NovaProChatbot:
     """Chatbot principal usando AWS Nova Pro con memoria y búsqueda CSV"""
     
-    def __init__(self, csv_file_name: str, aws_region: str = 'us-east-1', assets_path: str = 'assets'):
+    def __init__(self, csv_file_name: str, aws_region: str = 'us-east-1', assets_path: str = '../'):
         self.bedrock_client = ChatBedrockConverse(
             client=boto3.client(
                 service_name='bedrock-runtime',
@@ -181,7 +182,7 @@ class NovaProChatbot:
         )
         self.memory = ConversationMemory()
         self.csv_searcher = LocalCSVSearcher(assets_path)
-        self.csv_file_name = csv_file_name
+        self.csv_file_name = "base_autopartes_dummy.csv"
         self.model_id = "amazon.nova-pro-v1:0"
     
     def format_search_results(self, search_results: Dict[str, Any]) -> str:
@@ -236,11 +237,13 @@ class NovaProChatbot:
             }
             
             # Llamar al modelo
-            response = self.bedrock_client.converse(
-                modelId=self.model_id,
-                messages=request_body["messages"],
-                inferenceConfig=request_body["inferenceConfig"]
-            )
+            response = self.bedrock_client.invoke([HumanMessage(content=full_prompt)])
+            
+            # self.bedrock_client.converse(
+            #     modelId=self.model_id,
+            #     messages=request_body["messages"],
+            #     inferenceConfig=request_body["inferenceConfig"]
+            # )
             
             # Extraer la respuesta
             assistant_response = response['output']['message']['content'][0]['text']
