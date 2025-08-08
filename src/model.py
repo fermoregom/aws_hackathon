@@ -1,10 +1,15 @@
+import os
 import json
 import boto3
 import logging
 import pandas as pd
-from dotenv import load_dotenv
-from typing import List, Dict, Any, Optional
 from datetime import datetime
+from dotenv import load_dotenv
+from prompt_awss_hack import prompt_pieza
+from typing import List, Dict, Any, Optional
+from langchain_aws import ChatBedrockConverse
+from langchain_core.prompts import ChatPromptTemplate
+
 load_dotenv()
 
 # Configurar logging
@@ -152,7 +157,23 @@ class NovaProChatbot:
     """Chatbot principal usando AWS Nova Pro con memoria y búsqueda CSV"""
     
     def __init__(self, bucket_name: str, csv_file_key: str, aws_region: str = 'us-east-1'):
-        self.bedrock_client = boto3.client('bedrock-runtime', region_name=aws_region)
+        self.bedrock_client = ChatBedrockConverse(
+        client=boto3.client(
+            service_name='bedrock-runtime',
+            region_name=aws_region,
+            aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+            config=boto3.session.Config(
+            read_timeout=300,  # 5 minutos
+            connect_timeout=60,  # 1 minuto
+            retries={'max_attempts': 2})
+        ),
+        model="amazon.nova-pro-v1:0",
+        max_tokens=7000,
+        temperature=0.15,
+        top_p=0.9,
+        region_name=aws_region
+    )
         self.memory = ConversationMemory()
         self.csv_searcher = S3CSVSearcher(bucket_name, aws_region)
         self.csv_file_key = csv_file_key
@@ -187,17 +208,8 @@ class NovaProChatbot:
             
             Cuando el usuario mencione una pieza específica, búscala automáticamente y proporciona información relevante.
             Sé conciso pero informativo en tus respuestas."""
-            
-            full_prompt = f"""Contexto del sistema: {system_prompt}
-
-Historial de conversación:
-{conversation_context}
-
-{search_context}
-
-Usuario: {user_message}
-
-Asistente:"""
+            prompt_pieza
+            full_prompt = prompt_pieza.format_map({"user_message":user_message})
 
             # Preparar el cuerpo de la solicitud
             request_body = {
